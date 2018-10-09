@@ -1,22 +1,18 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {HashRouter} from 'react-router-dom';
 import './App.css';
-import Auth from './Components/Auth/Auth';
-import Dashboard from './Components/Dashboard/Dashboard';
-import Form from './Components/Form/Form';
 import Nav from './Components/Nav/Nav';
-import Post from './Components/Post/Post';
+import routes from './route';
 
 class App extends Component {
   render() {
     return (
+      <HashRouter>
       <div className="App">
-        <Auth/>
-        <Dashboard/>
-        <Form/>
         <Nav/>
-        <Post/>
+        {routes}
       </div>
+      </HashRouter>
     );
   }
 }

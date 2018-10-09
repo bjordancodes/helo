@@ -18,6 +18,8 @@ massive(process.env.CONNECTION_STRING).then(db => app.set('db', db)).catch(err =
 
 app.use(express.static('public'));
 
+app.get('/user', )
+
 
 const port = 3001;
 app.listen( port, () => {console.log(`Server listening on port ${port}!`)});
