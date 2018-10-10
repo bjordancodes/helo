@@ -1,7 +1,13 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {getUsers, getPosts} from '../../dux/reducer';
 
 class Dashboard extends Component {
 
+componentDidMount(){
+this.props.getUsers();
+this.props.getPosts();
+}
 
 render() {
 
@@ -11,4 +17,8 @@ return (
 
  }
 }
-export default Dashboard;
+
+const mapStateToProps = (state) => ({
+      ...state
+})
+export default connect(mapStateToProps, {getUsers, getPosts})(Dashboard);
