@@ -4,7 +4,7 @@ const massive = require('massive');
 const cors = require('cors');
 const session = require('express-session');
 require('dotenv').config();
-const {getUser, getPosts} = require('./controller');
+const {getUser, getPosts, updatePost} = require('./controller');
 
 const app = express();
 app.use(json());
@@ -20,8 +20,9 @@ massive(process.env.CONNECTION_STRING).then(db => app.set('db', db)).catch(err =
 
 app.use(express.static('public'));
 
-app.get('/user', getUser)
-app.get('/posts', getPosts)
+app.get('/user', getUser);
+app.get('/posts', getPosts);
+app.put('/post/:id', updatePost);
 
 
 const port = 3005;

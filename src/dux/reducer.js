@@ -38,7 +38,7 @@ export default function reducer(state = initialState, action){
         case `${GET_USER}_FULFILLED`:
         return{
             ...state,
-            user: action.payload,
+            user: action.payload.data,
             isLoading: false
         }
         case `${GET_POSTS}_PENDING`:
@@ -49,7 +49,7 @@ export default function reducer(state = initialState, action){
         case `${GET_POSTS}_FULFILLED`:
         return{
             ...state,
-            posts: action.payload,
+            posts: action.payload.data,
             isLoading: false
         }
     default: return state;
