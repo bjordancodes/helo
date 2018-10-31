@@ -15,7 +15,7 @@ class Auth extends Component {
 
 render() {
 
-    // console.log(this.props.location.pathname)
+    console.log(this.state)
 
 return (
       <div>
@@ -23,6 +23,7 @@ return (
           <input type='text' onChange={(e) => this.loginHandler("username", e.target.value)} placeholder="Username"/><br/>
           <input type='text' onChange={(e) => this.loginHandler("password", e.target.value)} placeholder="Password"/>
           </form>
+          
         </div>
        )
 

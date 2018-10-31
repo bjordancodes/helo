@@ -4,12 +4,13 @@ import Auth from './Components/Auth/Auth';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Post from './Components/Post/Post';
 import Form from './Components/Form/Form';
+import SpecificPost from './Components/Post/specificPost';
 
 export default (
     <Switch>
         <Route exact path='/' render={props => {console.log(props.location); return <Auth {...props} location={props.location}/>}}/>
-        <Route path="/dashboard" component={Dashboard}/>
-        <Route path="/post/:postid" render={props=> <Post {...props}/>}/>
+        <Route path="/dashboard" render={props => <Dashboard {...props}/>}/>
+        <Route path="/post/:postid" render={props=> <SpecificPost {...props}/>}/>
         <Route path="/new" component={Form}/>
     </Switch>
 )
